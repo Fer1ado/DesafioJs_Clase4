@@ -6,3 +6,13 @@ class PiezasOfrecidas {
         this.importe = importe
     }
 }
+
+class Venta{
+    constructor(nom, dir, prod, mail, id){
+    this.nom = nom.toLowerCase()
+    this.dir = dir.toLowerCase()
+    this.prod = prod
+    this.mail = mail.toLowerCase()
+    this.id = id
+}
+}
