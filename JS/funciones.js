@@ -45,6 +45,7 @@ function listarProductos(){
 
    
 function borrarProducto(){
+    console.table(piezasEnstock)
     let cod = parseInt(prompt ("ingrese el ID del producto que desea borrar:"))
     let existe = piezasEnstock.some(p=> p.id === cod)
 
