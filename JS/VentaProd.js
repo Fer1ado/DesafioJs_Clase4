@@ -17,7 +17,7 @@ function compra() {
         ventasRealizdas.push(new Venta(nombre, direccion,prod,mail,crearID()))
         
        
-        // ACA TRATE DE GENERAR UNA FUNCIÓN QUE ME EDITARA EL DATO DE STOCK EN EL ARRAY ORIGINAL DE PRODUCTOS OFRECIDOS PERO NO CONSEGUÍ HACERLO, NO ENCUENTRO MANERA DE REFERENCIAR UN ITEM INSTANCIADO DENTRO DE UN ELEMENTO EN EL ARRAY.
+        // ACA TRATE DE GENERAR UNA FUNCIÓN QUE ME EDITARA EL DATO DE STOCK EN EL ARRAY piezasEnstock PARA RESTAR LA CANTIDAD VENDIDA, PERO NO CONSEGUÍ HACERLO, NO SE SI HAY MANERA DE REFERENCIAR UN ITEM INSTANCIADO DENTRO DE UN OBJETO EN EL ARRAY.
         function editarStock(prod){
             let existe = piezasEnstock.some(p=> p.id === prod)
             if(existe===true)
