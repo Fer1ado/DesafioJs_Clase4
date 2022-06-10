@@ -29,11 +29,11 @@ function GeneradorAutomatico(){
 }
 
 function GeneradorVentas(){
-    ventasRealizdas.push(new Venta("Pepe Jonte", "Calle laspina 2085", 165,"pepeJ@gmail.com", crearID()))
-    ventasRealizdas.push(new Venta("Cacho Fontaner", "Calle josefa 6548", 486,"cachoF@gmail.com", crearID()))
-    ventasRealizdas.push(new Venta("Pepe Mujica", "Calle pintaponint 1058", 846,"pepeM@gmail.com", crearID()))
-    ventasRealizdas.push(new Venta("Ricardo Alfonsin", "Calle cisaña 789", 684,"ricardoA@gmail.com", crearID()))
-    ventasRealizdas.push(new Venta("Juana de Arco", "Calle pendular 57", 864,"JuanaA@gmail.com", crearID()))
+    ventasRealizdas.push(new Venta("Pepe Jonte", "Calle laspina 2085", 165, 15 ,"pepeJ@gmail.com", crearID()))
+    ventasRealizdas.push(new Venta("Cacho Fontaner", "Calle josefa 6548", 486, 7, "cachoF@gmail.com", crearID()))
+    ventasRealizdas.push(new Venta("Pepe Mujica", "Calle pintaponint 1058", 846, 12, "pepeM@gmail.com", crearID()))
+    ventasRealizdas.push(new Venta("Ricardo Alfonsin", "Calle cisaña 789", 684, 45, "ricardoA@gmail.com", crearID()))
+    ventasRealizdas.push(new Venta("Juana de Arco", "Calle pendular 57", 864, 5 ,"JuanaA@gmail.com", crearID()))
 }
 
 function buscarProducto (){
@@ -57,6 +57,7 @@ function borrarProducto(){
     let existe = piezasEnstock.some(p=> p.id === cod)
 
     if (existe){
+        debugger
       let index = piezasEnstock.findIndex((i)=>i.id === cod)
       piezasEnstock.splice(index,1)
       console.clear()

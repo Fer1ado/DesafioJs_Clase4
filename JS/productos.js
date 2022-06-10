@@ -8,10 +8,11 @@ class PiezasOfrecidas {
 }
 
 class Venta{
-    constructor(nom, dir, prod, mail, id){
+    constructor(nom, dir, prod, cant, mail, id){
     this.nom = nom.toLowerCase()
     this.dir = dir.toLowerCase()
     this.prod = prod
+    this.cant = cant
     this.mail = mail.toLowerCase()
     this.id = id
 }

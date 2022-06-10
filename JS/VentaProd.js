@@ -5,43 +5,52 @@ function compra() {
     console.table(piezasEnstock)
     let nombre = prompt("Ingrese su Nombre:")
     let direccion = prompt("ingrese su direcciòn:")
-    let prod = prompt("ingrese el ID del producto que esta comprando")
+    let prod = parseInt(prompt("ingrese el ID del producto que esta comprando\n \n SEA PRECISO! LISTAMOS LOS PRODUCTOS EN LA CONSOLA"))
+    let cant = parseInt(prompt("ingrese la cantidad de items a comprar"))
     let mail = prompt("ingrese su direcciòn de E-mail:")
     let idcompra = crearID()
-    
+    almacenarId = prod
      
-    let respuesta = confirm("los datos ingresados son:" + "\n \n " + nombre + "\n " + direccion + "\n " + prod + "\n " + mail + "\n\nSi son correctos Presiona ACEPTAR,\nSi no son correctos Presiona CANCELAR y vuelve a cargarlos")
+    let respuesta = confirm("los datos ingresados son:" + "\n \n " + nombre + "\n " + direccion + "\n " + mail + "\n\nSi son correctos Presiona ACEPTAR,\nSi no son correctos Presiona CANCELAR y vuelve a cargarlos")
        
     if(respuesta === true){ 
         alert("tu producto sera enviado a la calle:" + "\n \n " + direccion + "\n\n Se envió un correo con la facturación a:"+ "\n\n"  + mail + "\n \n Tu número de operación es:" + "   " + idcompra)
-        ventasRealizdas.push(new Venta(nombre, direccion,prod,mail,crearID()))
+        ventasRealizdas.push(new Venta(nombre, direccion,prod,cant,mail,crearID()))
         
        
-        // ACA TRATE DE GENERAR UNA FUNCIÓN QUE ME EDITARA EL DATO DE STOCK EN EL ARRAY piezasEnstock PARA RESTAR LA CANTIDAD VENDIDA, PERO NO CONSEGUÍ HACERLO, NO SE SI HAY MANERA DE REFERENCIAR UN ITEM INSTANCIADO DENTRO DE UN OBJETO EN EL ARRAY.
-        function editarStock(prod){
-            let existe = piezasEnstock.some(p=> p.id === prod)
-            if(existe===true)
-            for (prod of piezasEnstock) {this.stock= -1
-            };
-           if(existe===false){
-            console.log("registro inexistente")
-           }
-        }
-
+     
         }
         if(respuesta === false){
             let reiniciar = confirm("Ingresar nuevamente los datos de compra?:")
             if(reiniciar===true){
                 compra()
-            }        
+            }  
+                 
            } else {
-           console.log("nos vemos la proxima")
+           console.log("Gracias por tu compra")
+           let index = piezasEnstock.findIndex((stockResta) => stockResta.id === prod);
+
+           if(index !== -1){
+           piezasEnstock[index].stock = piezasEnstock[index].stock - cant
+            }
+            console.table(piezasEnstock[index])
+            console.log("quedan en stock " + piezasEnstock[index].stock + " unidades de este producto")
            }
     }
      
 function listarVentas(){
     console.table(ventasRealizdas)
 }
+
+
+// function ajustarStock(){
+//     debugger
+//     let index = piezasEnstock.findIndex(almacenarID => {return almacenarID.id === prod});
+//     if(index !== -1){
+//      piezasEnstock[index].prod = -1
+//     }
+
+//  }
 
     
     
